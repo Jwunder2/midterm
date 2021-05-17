@@ -1,0 +1,12 @@
+{
+  "name": "jwunderg/328/midterm",
+  "authors": [
+    {
+      "name": "James Wunder",
+      "email": "jwunder2@mail.greenriver.edu"
+    }
+  ],
+  "require":{
+    "bcosca/fatfree-core": "dev-master"
+  }
+}

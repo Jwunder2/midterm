@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Midterm Survey</title>
+</head>
+<body>
+<h1>Midterm Survey</h1>
+<form action="#" method="post" class="form-horizontal">
+
+
+    <div class="labelName">
+        <label for="inputName">Name</label>
+
+        <div class="name">
+            <input  type="text" name="inputName" id="inputName" value="">
+        </div>
+
+        <check if="{{ isset(@errors['inputName']) }}">
+            <span class="err">{{ @errors['inputName'] }}</span>
+        </check>
+    </div>
+
+    <h4>Check all that apply:</h4>
+
+    <div class="checkboxOptions">
+        <repeat group="{{ @midterms }}" value="{{ @midterms }}">
+            <label><input type="checkbox" name="terms[]"
+                          id="{{ @midterms }}" value="{{ @midterms }}"  <check if="{{ in_array(@midterms, @userTerms) }}">
+                checked="checked"
+            </check>
+                >
+                {{ @midterms }}
+                </input>
+            </label><br>
+        </repeat>
+
+        <check if="{{ isset(@errors['terms']) }}">
+            <span class="err">{{ @errors['terms'] }}</span>
+        </check>
+    </div>
+
+    <a href="summary"><button>Submit</button></a>
+</form>
+
+</body>
+</html>
